@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useId } from 'react';
 
 const Checkbox = ({ label, checked = false, onChange, disabled }) => {
@@ -10,7 +11,7 @@ const Checkbox = ({ label, checked = false, onChange, disabled }) => {
         <input
           id={inputId}
           type='checkbox'
-          checked={checked}
+          defaultChecked={checked ? true : false}
           onChange={onChange}
           disabled={disabled}
         />
@@ -21,3 +22,10 @@ const Checkbox = ({ label, checked = false, onChange, disabled }) => {
 };
 
 export default Checkbox;
+
+Checkbox.propTypes = {
+  label: PropTypes.string.isRequired,
+  checked: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+};

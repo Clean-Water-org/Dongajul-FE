@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { forwardRef, useId } from 'react';
 
 const Textarea = forwardRef(function Textarea(
-  { value, label, placeholder, readonly = false, disabled = false, onChange },
+  { value, label, placeholder, readOnly = false, disabled = false, onChange },
   ref
 ) {
   const id = useId();
@@ -15,7 +16,7 @@ const Textarea = forwardRef(function Textarea(
         ref={ref}
         value={value}
         placeholder={placeholder}
-        readOnly={readonly}
+        readOnly={readOnly}
         disabled={disabled}
         onChange={onChange}
       />
@@ -24,3 +25,12 @@ const Textarea = forwardRef(function Textarea(
 });
 
 export default Textarea;
+
+Textarea.propTypes = {
+  value: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+};

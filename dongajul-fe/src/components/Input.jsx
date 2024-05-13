@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { forwardRef, useId } from 'react';
 import { INPUT_TYPE } from '../constants/input';
 
@@ -38,3 +39,14 @@ const Input = forwardRef(function Input(
 });
 
 export default Input;
+
+Input.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  type: PropTypes.oneOf(Object.values(INPUT_TYPE)),
+  onChange: PropTypes.func.isRequired,
+  readOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
+};
