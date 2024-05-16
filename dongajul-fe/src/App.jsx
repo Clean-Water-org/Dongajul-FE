@@ -1,10 +1,15 @@
 import './App.css';
+import { Suspense } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RoutesComponents from './router/routes';
 
 function App() {
   return (
-    <>
-      <h1>메인 페이지</h1>
-    </>
+    <Router>
+      <Suspense fallback={<div>페이지 로딩 중 ...</div>}>
+        <RoutesComponents />
+      </Suspense>
+    </Router>
   );
 }
 
