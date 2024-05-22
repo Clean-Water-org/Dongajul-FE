@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { forwardRef, useId } from 'react';
-import { INPUT_TYPE } from '../constants/input';
+import { INPUT_TYPE } from '../../../constants/input';
+import './Input.scss';
 
 const Input = forwardRef(function Input(
   {
@@ -9,7 +10,7 @@ const Input = forwardRef(function Input(
     name,
     placeholder,
     type = INPUT_TYPE.TEXT,
-    onChange,
+    onChange = () => {},
     readOnly,
     disabled,
   },
@@ -19,10 +20,27 @@ const Input = forwardRef(function Input(
   const inputId = `input-${id}`;
 
   return (
-    <div className='input-wrap'>
-      <label htmlFor={inputId}>
-        {label}
+    <div className='Input'>
+      {label && (
+        <label htmlFor={inputId} className='input-label'>
+          {label}
+          <input
+            className='input-with-label'
+            ref={ref}
+            id={inputId}
+            type={type}
+            value={value}
+            name={name}
+            placeholder={placeholder}
+            onChange={onChange}
+            readOnly={readOnly}
+            disabled={disabled}
+          />
+        </label>
+      )}
+      {!label && (
         <input
+          className='input-without-label'
           ref={ref}
           id={inputId}
           type={type}
@@ -33,7 +51,7 @@ const Input = forwardRef(function Input(
           readOnly={readOnly}
           disabled={disabled}
         />
-      </label>
+      )}
     </div>
   );
 });
