@@ -1,0 +1,10 @@
+.body {
+  // width: 1920px;
+  // height: 100vh;
+  position: relative;
+  min-height: 900px;
+
+  &-default {
+    padding: 0 310px;
+  }
+}
