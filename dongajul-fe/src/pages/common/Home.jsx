@@ -1,21 +1,17 @@
-import { fetchUsers } from '../../apis/users';
-import Button from '../../components/Button';
-import { userState } from '../../stores/testStores';
+import Fab from '../../components/fab/Fab';
+import Slider from '../../components/slider/Slider';
+import banner1 from '../../assets/img/main_banner_1.png';
+import banner2 from '../../assets/img/main_banner_2.jpg';
+import banner3 from '../../assets/img/main_banner_3.jpg';
 import './Home.scss';
-import { useRecoilState } from 'recoil';
+
+const images = [banner1, banner2, banner3];
 
 const Home = () => {
-  const onClickButton = async () => {
-    await fetchUsers();
-  };
-
-  const [user, setUser] = useRecoilState(userState);
-  console.log('user', user);
-
   return (
     <div className='home'>
-      <h1>Home 화면입니다.</h1>
-      <Button text='데이터 조회' onClick={onClickButton} />
+      <Slider images={images} />
+      <Fab />
     </div>
   );
 };
