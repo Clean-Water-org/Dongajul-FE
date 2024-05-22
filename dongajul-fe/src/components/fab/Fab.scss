@@ -1,0 +1,15 @@
+.fab {
+  position: fixed;
+  bottom: 64px;
+  right: 310px;
+  width: 72px;
+  height: 72px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    z-index: 10;
+  }
+}
