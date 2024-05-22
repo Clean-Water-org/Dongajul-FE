@@ -1,0 +1,257 @@
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-display: swap;
+  src: url('../../public/PretendardVariable.woff2') format('woff2-variations');
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+}
+
+@mixin font-generator($weight, $size, $lineHeight, $letterSpacing) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
+
+@mixin display-large-b {
+  @include font-generator(700, 53px, 64px, -0.25px);
+}
+
+@mixin display-medium-b {
+  @include font-generator(700, 45px, 52px, 0);
+}
+
+@mixin display-small-b {
+  @include font-generator(700, 36px, 44px, 0);
+}
+
+@mixin display-large {
+  @include font-generator(400, 57px, 64px, -0.25px);
+}
+
+@mixin display-medium {
+  @include font-generator(400, 45px, 52px, 0);
+}
+
+@mixin display-small {
+  @include font-generator(400, 36px, 44px, 0);
+}
+
+@mixin headline-large-b {
+  @include font-generator(700, 32px, 40px, 0);
+}
+
+@mixin headline-medium-b {
+  @include font-generator(700, 28px, 36px, 0);
+}
+
+@mixin headline-small-b {
+  @include font-generator(700, 24px, 32px, 0);
+}
+
+@mixin headline-large {
+  @include font-generator(400, 32px, 40px, 0);
+}
+
+@mixin headline-medium {
+  @include font-generator(400, 28px, 36px, 0);
+}
+
+@mixin headline-small {
+  @include font-generator(400, 24px, 32px, 0);
+}
+
+@mixin title-large-b {
+  @include font-generator(700, 22px, 28px, 0);
+}
+
+@mixin title-medium-b {
+  @include font-generator(700, 20px, 24px, 0);
+}
+
+@mixin title-small-b {
+  @include font-generator(700, 18px, 20px, 0);
+}
+
+@mixin title-large {
+  @include font-generator(400, 22px, 28px, 0);
+}
+
+@mixin title-medium {
+  @include font-generator(400, 20px, 24px, 0);
+}
+
+@mixin title-small {
+  @include font-generator(400, 18px, 20px, 0);
+}
+
+@mixin label-large-semibold {
+  @include font-generator(600, 14px, 20px, 0.1px);
+}
+
+@mixin label-medium-semibold {
+  @include font-generator(600, 12px, 16px, 0.5px);
+}
+
+@mixin label-small-semibold {
+  @include font-generator(600, 11px, 16px, 0.5px);
+}
+
+@mixin label-large {
+  @include font-generator(400, 14px, 20px, 0.1px);
+}
+
+@mixin label-medium {
+  @include font-generator(400, 12px, 16px, 0.5px);
+}
+
+@mixin label-small {
+  @include font-generator(400, 11px, 16px, 0.5px);
+}
+
+@mixin body-large-semibold {
+  @include font-generator(600, 16px, 24px, 0);
+}
+
+@mixin body-medium-semibold {
+  @include font-generator(600, 14px, 20px, 0);
+}
+
+@mixin body-small-semibold {
+  @include font-generator(600, 12px, 16px, 0);
+}
+
+@mixin body-large {
+  @include font-generator(400, 16px, 24px, 0);
+}
+
+@mixin body-medium {
+  @include font-generator(400, 14px, 20px, 0);
+}
+
+@mixin body-small {
+  @include font-generator(400, 12px, 16px, 0);
+}
+
+.display-large-b {
+  @include display-large-b;
+}
+
+.display-medium-b {
+  @include display-medium-b;
+}
+
+.display-small-b {
+  @include display-small-b;
+}
+
+.display-large {
+  @include display-large;
+}
+
+.display-medium {
+  @include display-medium;
+}
+
+.display-small {
+  @include display-small;
+}
+
+.headline-large-b {
+  @include headline-large-b;
+}
+
+.headline-medium-b {
+  @include headline-medium-b;
+}
+
+.headline-small-b {
+  @include headline-small-b;
+}
+
+.headline-large {
+  @include headline-large;
+}
+
+.headline-medium {
+  @include headline-medium;
+}
+
+.headline-small {
+  @include headline-small;
+}
+
+.title-large-b {
+  @include title-large-b;
+}
+
+.title-medium-b {
+  @include title-medium-b;
+}
+
+.title-small-b {
+  @include title-small-b;
+}
+
+.title-large {
+  @include title-large;
+}
+
+.title-medium {
+  @include title-medium;
+}
+
+.title-small {
+  @include title-small;
+}
+
+.label-large-semibold {
+  @include label-large-semibold;
+}
+
+.label-medium-semibold {
+  @include label-medium-semibold;
+}
+
+.label-small-semibold {
+  @include label-small-semibold;
+}
+
+.label-large {
+  @include label-large;
+}
+
+.label-medium {
+  @include label-medium;
+}
+
+.label-small {
+  @include label-small;
+}
+
+.body-large-semibold {
+  @include body-large-semibold;
+}
+
+.body-medium-semibold {
+  @include body-medium-semibold;
+}
+
+.body-small-semibold {
+  @include body-small-semibold;
+}
+
+.body-large {
+  @include body-large;
+}
+
+.body-medium {
+  @include body-medium;
+}
+
+.body-small {
+  @include body-small;
+}
