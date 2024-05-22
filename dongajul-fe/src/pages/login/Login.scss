@@ -1,0 +1,46 @@
+@import '../../styles/style.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section {
+    user-select: none;
+    display: flex;
+
+    &-header {
+      margin-bottom: 55px;
+      .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+          @include display-medium-b;
+          margin-bottom: 22px;
+        }
+
+        .sub-title {
+          @include title-small;
+        }
+      }
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        // justify-content: space-between;
+        gap: 16px;
+      }
+      .button-container {
+      }
+    }
+  }
+}
