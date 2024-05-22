@@ -1,0 +1,23 @@
+@import '../../../styles/style.scss';
+
+.Button {
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 8px;
+
+  &.primary {
+    background-color: $main-color;
+    color: white;
+    border: none;
+  }
+
+  &.large {
+    width: 410px;
+    height: 60px;
+    @include title-small-b;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

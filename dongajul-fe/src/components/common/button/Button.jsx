@@ -1,19 +1,24 @@
 import PropTypes from 'prop-types';
-import { BUTTON_SIZE, BUTTON_TYPE } from '../constants/button';
+import { BUTTON_SIZE, BUTTON_TYPE } from '../../../constants/button';
+import './Button.scss';
 
 const Button = ({
   text,
   type = BUTTON_TYPE.PRIMARY,
   size = BUTTON_SIZE.MEDIUM,
   disabled = false,
-  onClick,
+  onClick = () => {},
 }) => {
   if (Object.values(BUTTON_TYPE).indexOf(type) === -1) {
     throw new Error('Invalid button type');
   }
 
   return (
-    <button className={[type, size]} onClick={onClick} disabled={disabled}>
+    <button
+      className={`Button ${type} ${size}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {text}
     </button>
   );
