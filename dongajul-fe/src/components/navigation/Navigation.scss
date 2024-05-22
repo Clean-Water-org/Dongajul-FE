@@ -1,0 +1,102 @@
+@use '../../styles/style.scss';
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 40px 0 100px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: 1.5px solid #e0e0e0;
+  gap: 64px;
+  user-select: none;
+  max-width: 1920px;
+  height: 88px;
+
+  a {
+    color: style.$grayscale-50;
+    text-decoration: none;
+
+    &.active {
+      color: style.$main-color;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    &:hover {
+      color: style.$main-color;
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: row;
+
+    &-logo {
+      // TODO 제거 예정
+      width: 220px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      background-color: #979797;
+      height: 54px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-menu {
+      flex: 1;
+
+      .menu-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 64px;
+      }
+    }
+
+    &-user {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+
+      .user {
+        &-left {
+          display: flex;
+          flex-direction: row;
+          gap: 16px;
+
+          .icon {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        &-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        &-container {
+          display: flex;
+          flex-direction: row;
+        }
+
+        &-wrapper {
+          display: flex;
+          position: relative;
+
+          &:not(:last-child)::after {
+            content: '/';
+            position: relative;
+            color: #8e8e8e;
+          }
+        }
+      }
+    }
+  }
+}
