@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
 import { useId } from 'react';
+import './Checkbox.scss';
 
-const Checkbox = ({ label, checked = false, onChange, disabled }) => {
+const Checkbox = ({
+  label,
+  checked = false,
+  onChange = () => {},
+  disabled,
+}) => {
   const id = useId();
   const inputId = `checkbox-${id}`;
 
   return (
-    <div className='checkbox-wrap'>
-      <label htmlFor={inputId}>
+    <div className='Checkbox'>
+      <label htmlFor={inputId} className='checkbox-label'>
         <input
+          className='checkbox-input'
           id={inputId}
           type='checkbox'
           defaultChecked={checked ? true : false}
