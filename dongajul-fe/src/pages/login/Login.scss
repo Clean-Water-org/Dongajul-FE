@@ -5,23 +5,28 @@
   flex-direction: column;
   align-items: center;
 
-  .section {
-    user-select: none;
+  > section {
     display: flex;
+    width: 410px;
+  }
 
+  &__section {
     &-header {
+      display: flex;
+      flex-direction: column;
       margin-bottom: 55px;
-      .title-container {
+
+      > .header-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 22px;
 
-        .title {
+        > .title {
           @include display-medium-b;
-          margin-bottom: 22px;
         }
 
-        .sub-title {
+        > .description {
           @include title-small;
         }
       }
@@ -31,15 +36,61 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      margin-bottom: 36px;
 
-      .input-container {
+      > .form-container {
         display: flex;
         flex-direction: column;
         align-items: start;
-        // justify-content: space-between;
         gap: 16px;
       }
-      .button-container {
+    }
+
+    &-sns {
+      .sns-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 42px;
+
+        span {
+          @include title-small;
+          color: $grayscale-90;
+        }
+
+        > .sns-wrapper {
+          display: flex;
+          gap: 16px;
+
+          > img:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+
+      > .link-container {
+        display: flex;
+        gap: 68px;
+
+        > a {
+          text-decoration: none;
+          @include title-small;
+          color: $grayscale-50;
+          position: relative;
+
+          &:not(:last-child)::after {
+            content: '|';
+            position: absolute;
+            color: #8e8e8e;
+            margin-left: 34px;
+            cursor: default;
+          }
+        }
       }
     }
   }
