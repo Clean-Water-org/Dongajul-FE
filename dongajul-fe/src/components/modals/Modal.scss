@@ -1,0 +1,27 @@
+@import '@/styles/style.scss';
+
+.modal {
+  &-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(85, 85, 85, 0.4);
+  }
+
+  &-container {
+    min-height: 542px;
+    min-width: 554px;
+    background-color: $white;
+    padding: 54px 72px;
+    box-sizing: border-box;
+    border: 1px solid #f8f8f8;
+    border-radius: 12px;
+    width: fit-content;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
