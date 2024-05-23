@@ -1,14 +1,16 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Layout from '../components/layouts/Layout';
+import Layout from '@/components/layouts/Layout';
+import Signup from '@/pages/signup/Signup';
 
-const Home = lazy(() => import('../pages/common/Home'));
-const Login = lazy(() => import('../pages/login/Login'));
-const NotFound = lazy(() => import('../pages/common/NotFound'));
+const Home = lazy(() => import('@/pages/common/Home'));
+const Login = lazy(() => import('@/pages/login/Login'));
+const NotFound = lazy(() => import('@/pages/common/NotFound'));
 
 const routes = [
   { key: 'home', path: '/', element: <Home /> },
   { key: 'login', path: '/login', element: <Login /> },
+  { key: 'signup', path: '/signup', element: <Signup /> },
   { key: 'notfound', path: '*', element: <NotFound /> },
 ];
 
