@@ -1,0 +1,53 @@
+@import '@/styles/style.scss';
+
+.signup-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  &__section {
+    &-header {
+      > .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        color: $grayscale-90;
+
+        > .title {
+          @include display-medium-b;
+        }
+
+        > .description {
+          @include title-small;
+        }
+      }
+    }
+
+    &-content {
+      user-select: none;
+      > .img-button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        > img:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-footer {
+      @include title-small;
+      > span {
+        margin-right: 8px;
+        color: $grayscale-50;
+      }
+
+      > a {
+        color: $grayscale-70;
+      }
+    }
+  }
+}
