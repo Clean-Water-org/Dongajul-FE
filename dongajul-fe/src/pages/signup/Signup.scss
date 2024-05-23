@@ -1,0 +1,75 @@
+@import '@/styles/style.scss';
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > section {
+    display: flex;
+    flex-direction: column;
+    width: 544px;
+  }
+
+  &__section {
+    &-header {
+      margin-bottom: 55px;
+
+      > .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+
+        > .title {
+          @include display-medium-b;
+        }
+
+        > .description {
+          @include title-small;
+        }
+      }
+    }
+
+    &-form {
+      gap: 16px;
+      margin-bottom: 126px;
+
+      > .input-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        > .input-label {
+          @include title-small-b;
+          color: $grayscale-90;
+          user-select: none;
+        }
+
+        > .input-content {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+
+          &.with-helpertext {
+            flex-direction: column;
+
+            > span {
+              display: inline-block;
+              @include body-medium;
+              color: $grayscale-70;
+            }
+          }
+        }
+      }
+    }
+
+    &-button {
+      > .button-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
