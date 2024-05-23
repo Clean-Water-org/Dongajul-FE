@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import classNames from 'classnames';
+
 import './Slider.scss';
 
 const Slider = ({ images = [] }) => {
@@ -29,24 +31,24 @@ const Slider = ({ images = [] }) => {
   };
 
   return (
-    <div className="slider">
+    <div className='slider'>
       <div
-        className="slider-container"
+        className='slider-container'
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div className="slider-wrapper" key={index}>
+          <div className='slider-wrapper' key={index}>
             <img src={image} alt={`image_${index + 1}`} />
           </div>
         ))}
       </div>
-      <div className="slider-nav">
+      <div className='slider-nav'>
         {images.map((_, index) => (
           <span
             key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            className={classNames('dot', { active: index === currentIndex })}
             onClick={() => goToSlide(index)}
-          ></span>
+          />
         ))}
       </div>
     </div>

@@ -22,7 +22,7 @@ const Input = forwardRef(function Input(
   const inputId = `input-${id}`;
 
   return (
-    <div className="Input">
+    <div className='input'>
       <input
         className={classNames('input', size, { error: warning })}
         ref={ref}

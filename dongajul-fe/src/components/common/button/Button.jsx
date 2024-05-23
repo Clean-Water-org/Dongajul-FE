@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { BUTTON_SIZE, BUTTON_TYPE } from '@/constants/button';
+import classNames from 'classnames';
 import './Button.scss';
 
 const Button = ({
@@ -15,7 +16,7 @@ const Button = ({
 
   return (
     <button
-      className={`Button ${type} ${size}`}
+      className={classNames('button', type, size)}
       onClick={onClick}
       disabled={disabled}
     >
