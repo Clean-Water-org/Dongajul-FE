@@ -1,4 +1,4 @@
-import '../src/styles/style.scss';
+import '@/styles/style.scss';
 import { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import RoutesComponents from './router/routes';

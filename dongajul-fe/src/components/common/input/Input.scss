@@ -1,21 +1,39 @@
-@import '../../../styles/style.scss';
+@import '@/styles/style.scss';
 
 .Input > {
   .input {
-    &-label > {
-      .input-with-label {
-      }
+    @include title-small;
+    color: $grayscale-50;
+    border: 1px solid $grayscale-30;
+    border-radius: 6px;
+    padding: 24px 16px;
+    box-sizing: border-box;
+
+    &:focus:not(.error) {
+      border: 1px solid $main-color;
+      background-color: $white;
+      color: $grayscale-90;
     }
 
-    &-without-label {
-      @include title-small;
-      color: $grayscale-50;
+    &.error {
+      border: 1px solid $danger-50;
+      background-color: $danger-5;
+      color: $grayscale-90;
+    }
+
+    &.small {
+      width: 200px;
+      height: 54px;
+    }
+
+    &.medium {
+      width: 278px;
+      height: 54px;
+    }
+
+    &.large {
       width: 410px;
       height: 54px;
-      border: 1px solid $grayscale-30;
-      border-radius: 6px;
-      padding: 24px 16px;
-      box-sizing: border-box;
     }
   }
 }

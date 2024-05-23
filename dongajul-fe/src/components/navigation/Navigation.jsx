@@ -1,7 +1,7 @@
-import './Navigation.scss';
 import { NavLink } from 'react-router-dom';
-import icon_user from '../../assets/icons/icon_user.svg';
-import icon_notify from '../../assets/icons/icon_notify.svg';
+import icon_user from '@/assets/icons/icon_user.svg';
+import icon_notify from '@/assets/icons/icon_notify.svg';
+import './Navigation.scss';
 
 const pageMenus = [
   { id: 'Home', path: '/', text: '홈' },
@@ -16,16 +16,16 @@ const authMenus = [
 
 const Navigation = () => {
   return (
-    <nav className='nav'>
-      <section className='section section-logo'>
+    <nav className="nav">
+      <section className="section section-logo">
         <p>동아줄</p>
       </section>
 
-      <section className='section section-menu'>
-        <ul className='menu-container'>
+      <section className="section section-menu">
+        <ul className="menu-container">
           {pageMenus.map((menu) => (
-            <li key={menu.id} className='menu-wrapper'>
-              <NavLink to={menu.path} className='menu' activeclassname='active'>
+            <li key={menu.id} className="menu-wrapper">
+              <NavLink to={menu.path} className="menu" activeclassname="active">
                 {menu.text}
               </NavLink>
             </li>
@@ -33,16 +33,16 @@ const Navigation = () => {
         </ul>
       </section>
 
-      <section className='section section-user'>
-        <div className='user-left'>
-          <img src={icon_notify} alt='' className='icon notify'></img>
-          <img src={icon_user} alt='' className='icon user'></img>
+      <section className="section section-user">
+        <div className="user-left">
+          <img src={icon_notify} alt="" className="icon notify"></img>
+          <img src={icon_user} alt="" className="icon user"></img>
         </div>
-        <div className='user-right'>
-          <ul className='user-container'>
+        <div className="user-right">
+          <ul className="user-container">
             {authMenus.map((auth) => (
-              <li key={auth.id} className='user-wrapper'>
-                <NavLink to={auth.path} activeclassname='active'>
+              <li key={auth.id} className="user-wrapper">
+                <NavLink to={auth.path} activeclassname="active">
                   {auth.text}
                 </NavLink>
               </li>

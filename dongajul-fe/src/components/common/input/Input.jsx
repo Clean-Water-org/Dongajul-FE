@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { forwardRef, useId } from 'react';
-import { INPUT_TYPE } from '../../../constants/input';
+import { INPUT_TYPE, INPUT_SIZE } from '@/constants/input';
+import classNames from 'classnames';
 import './Input.scss';
 
 const Input = forwardRef(function Input(
   {
-    label,
     value,
     name,
     placeholder,
@@ -13,6 +13,8 @@ const Input = forwardRef(function Input(
     onChange = () => {},
     readOnly,
     disabled,
+    warning = false,
+    size = INPUT_SIZE.MEDIUM,
   },
   ref
 ) {
@@ -20,38 +22,19 @@ const Input = forwardRef(function Input(
   const inputId = `input-${id}`;
 
   return (
-    <div className='Input'>
-      {label && (
-        <label htmlFor={inputId} className='input-label'>
-          {label}
-          <input
-            className='input-with-label'
-            ref={ref}
-            id={inputId}
-            type={type}
-            value={value}
-            name={name}
-            placeholder={placeholder}
-            onChange={onChange}
-            readOnly={readOnly}
-            disabled={disabled}
-          />
-        </label>
-      )}
-      {!label && (
-        <input
-          className='input-without-label'
-          ref={ref}
-          id={inputId}
-          type={type}
-          value={value}
-          name={name}
-          placeholder={placeholder}
-          onChange={onChange}
-          readOnly={readOnly}
-          disabled={disabled}
-        />
-      )}
+    <div className="Input">
+      <input
+        className={classNames('input', size, { error: warning })}
+        ref={ref}
+        id={inputId}
+        type={type}
+        value={value}
+        name={name}
+        placeholder={placeholder}
+        onChange={onChange}
+        readOnly={readOnly}
+        disabled={disabled}
+      />
     </div>
   );
 });

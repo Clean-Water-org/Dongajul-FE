@@ -1,13 +1,29 @@
-@import '../../../styles/style.scss';
+@import '@/styles/style.scss';
 
 .Button {
   text-align: center;
   margin: 0 auto;
   border-radius: 8px;
 
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
+
   &.primary {
     background-color: $main-color;
     color: white;
+    border: none;
+  }
+
+  &.secondary {
+    background-color: white;
+    color: $main-color;
+    border: 1px solid $main-color;
+  }
+
+  &:disabled {
+    background-color: $grayscale-30;
+    color: $white;
     border: none;
   }
 
@@ -17,7 +33,15 @@
     @include title-small-b;
   }
 
-  &:hover {
-    cursor: pointer;
+  &.medium {
+    width: 200px;
+    height: 54px;
+    @include title-small-b;
+  }
+
+  &.small {
+    width: 122px;
+    height: 54px;
+    @include body-large-semibold;
   }
 }

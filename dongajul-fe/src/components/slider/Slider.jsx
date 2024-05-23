@@ -1,5 +1,5 @@
-import './Slider.scss';
 import { useState, useEffect, useRef } from 'react';
+import './Slider.scss';
 
 const Slider = ({ images = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,18 +29,18 @@ const Slider = ({ images = [] }) => {
   };
 
   return (
-    <div className='slider'>
+    <div className="slider">
       <div
-        className='slider-container'
+        className="slider-container"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div className='slider-wrapper' key={index}>
+          <div className="slider-wrapper" key={index}>
             <img src={image} alt={`image_${index + 1}`} />
           </div>
         ))}
       </div>
-      <div className='slider-nav'>
+      <div className="slider-nav">
         {images.map((_, index) => (
           <span
             key={index}

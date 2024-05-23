@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import Dropdown from '../components/Dropdown';
+import Dropdown from '@/components/Dropdown';
 
 export default {
   title: 'Example/Dropdown',

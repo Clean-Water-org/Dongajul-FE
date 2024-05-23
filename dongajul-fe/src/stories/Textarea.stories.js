@@ -1,4 +1,4 @@
-import Textarea from '../components/Textarea';
+import Textarea from '@/components/Textarea';
 import { fn } from '@storybook/test';
 
 export default {

@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import Checkbox from '../components/Checkbox';
+import Checkbox from '@/components/Checkbox';
 
 export default {
   title: 'Example/Checkbox',

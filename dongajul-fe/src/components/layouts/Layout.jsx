@@ -1,5 +1,5 @@
-import Footer from '../footer/Footer';
-import Navigation from '../navigation/Navigation';
+import Footer from '@/components/footer/Footer';
+import Navigation from '@/components/navigation/Navigation';
 import './Layout.scss';
 
 const Layout = ({ page, main = false }) => {

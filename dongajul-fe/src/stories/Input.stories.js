@@ -1,5 +1,5 @@
-import Input from '../components/Input';
-import { INPUT_TYPE } from '../constants/input';
+import Input from '@/components/Input';
+import { INPUT_TYPE } from '@/constants/input';
 import { fn } from '@storybook/test';
 
 export default {

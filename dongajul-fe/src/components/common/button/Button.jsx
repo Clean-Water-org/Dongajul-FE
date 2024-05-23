@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { BUTTON_SIZE, BUTTON_TYPE } from '../../../constants/button';
+import { BUTTON_SIZE, BUTTON_TYPE } from '@/constants/button';
 import './Button.scss';
 
 const Button = ({
