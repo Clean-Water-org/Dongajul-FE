@@ -1,55 +1,102 @@
 import { INPUT_SIZE } from '@/constants/input';
-import Button from '@/components/common/button/Button';
-import Checkbox from '@/components/common/checkbox/Checkbox';
-import Input from '@/components/common/input/Input';
+import Button from '@/components/button/Button';
+import Checkbox from '@/components/checkbox/Checkbox';
+import Input from '@/components/input/Input';
 import { BUTTON_SIZE } from '@/constants/button';
 import './Login.scss';
 import naver from '@/assets/img/login_naver.png';
 import kakao from '@/assets/img/login_kakao.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Modal from '@/components/modals/Modal';
 import ModalPotal from '@/components/modals/ModalPotal';
-import { useState } from 'react';
-import SingupModal from '@/pages/login/components/SignupModal';
+import { useState, useEffect } from 'react';
+import SignupModal from '@/pages/login/components/SignupModal';
+import Header from '@/components/Header/Header';
+import queryString from 'query-string';
+import logo from '@/assets/img/logo_color.png';
 
 const Login = () => {
-  const [showModal, setShowModal] = useState(true);
+  const location = useLocation();
+  const { signup } = queryString.parse(location.search);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const [email, setEmail] = useState('');
+
+  const [password, setPassword] = useState('');
+
+  const [checked, setChecked] = useState(false);
+
+  const onClickSignup = () => {
+    setShowModal(true);
+  };
 
   const onClose = () => {
     setShowModal(false);
   };
 
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const onChangeCheckbox = (e) => {
+    setChecked(e.target.checked);
+  };
+
+  const onClickLogin = () => {
+    console.log('로그인');
+  };
+
+  useEffect(() => {
+    if (signup === 'true') {
+      onClickSignup();
+    }
+  }, [signup]);
+
   return (
     <>
+      <Header
+        title={<img src={logo} alt='logo' />}
+        description='나만의 온라인 사수를 찾아보세요!'
+      />
       <div className='login'>
-        <section className='login__section-header'>
-          <div className='header-container'>
-            <h1 className='title'>동아줄</h1>
-            <span className='description'>
-              나만의 온라인 사수를 만나보세요!
-            </span>
-          </div>
-        </section>
         <section className='login__section-form'>
           <div className='form-container'>
             <Input
+              value={email}
               placeholder='이메일'
-              onChange={() => {}}
+              onChange={onChangeEmail}
               size={INPUT_SIZE.LARGE}
             />
             <Input
+              value={password}
               placeholder='비밀번호'
               type='password'
-              onChange={() => {}}
+              onChange={onChangePassword}
               size={INPUT_SIZE.LARGE}
             />
-            <Checkbox label='이메일 저장하기' onChange={() => {}} />
+            <Checkbox
+              value={checked}
+              label='이메일 저장하기'
+              onChange={onChangeCheckbox}
+            />
           </div>
           <div className='button-container'>
-            <Button text='로그인' size={BUTTON_SIZE.LARGE} onClick={() => {}} />
+            <Button
+              text='로그인'
+              size={BUTTON_SIZE.LARGE}
+              onClick={onClickLogin}
+            />
           </div>
         </section>
         <section className='login__section-sns'>
+          <div className='text-wrapper'>
+            <span>또는</span>
+          </div>
           <div className='sns-container'>
             <div className='label-wrapper'>
               <span>SNS 간편 로그인하기</span>
@@ -62,7 +109,7 @@ const Login = () => {
         </section>
         <section className='login__section-link'>
           <div className='link-container'>
-            <NavLink to='/signup'>회원가입</NavLink>
+            <span onClick={onClickSignup}>회원가입</span>
             <NavLink to='/find'>아이디 찾기</NavLink>
             <NavLink to='/find'>비밀번호 찾기</NavLink>
           </div>
@@ -71,7 +118,7 @@ const Login = () => {
 
       {showModal && (
         <ModalPotal>
-          <Modal content={<SingupModal />} onClose={onClose} />
+          <Modal content={SignupModal} onClose={onClose} />
         </ModalPotal>
       )}
     </>

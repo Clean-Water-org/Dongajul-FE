@@ -1,0 +1,40 @@
+@import '@/styles/style.scss';
+.tapbar {
+  width: fit-content;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid $main-color;
+    border-radius: 6px;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 60px;
+
+    .tapbar__item {
+      padding: 10px 20px;
+      cursor: pointer;
+      border-right: 1px solid $main-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 320px;
+      height: 60px;
+      box-sizing: border-box;
+      color: $main-color;
+      @include title-small-b;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &.active {
+        background-color: $main-color;
+        color: $white;
+      }
+    }
+  }
+}

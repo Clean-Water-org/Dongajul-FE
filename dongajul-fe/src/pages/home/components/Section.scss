@@ -1,0 +1,66 @@
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: calc(100vw - 310px);
+
+  > .cards-mentor {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    overflow-x: hidden; /* 기본적으로 스크롤을 숨김 */
+    padding: 0 16px 16px 0; /* 위 0, 오른쪽 16px, 아래 16px, 왼쪽 0 */
+
+    &::-webkit-scrollbar {
+      height: 4px;
+      display: none; /* 스크롤바 숨김 */
+    }
+
+    &:hover {
+      overflow-x: auto; /* 마우스 오버 시 스크롤 활성화 */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fbfbfb;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #d8d8d8;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  > .cards-review {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: hidden; /* 기본적으로 스크롤을 숨김 */
+    // padding: 0 16px 16px 0; /* 위 0, 오른쪽 16px, 아래 16px, 왼쪽 0 */
+
+    &::-webkit-scrollbar {
+      height: 4px;
+      display: none; /* 스크롤바 숨김 */
+    }
+
+    &:hover {
+      overflow-x: auto; /* 마우스 오버 시 스크롤 활성화 */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #fbfbfb;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #d8d8d8;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 .body {
   position: relative;
+  min-height: 692px;
   height: fit-content;
+
   &-default {
     padding: 72px 310px;
   }

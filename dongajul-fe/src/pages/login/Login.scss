@@ -10,87 +10,103 @@
     width: 410px;
   }
 
-  &__section {
-    &-header {
+  &__section-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 55px;
+
+    > .header-container {
       display: flex;
       flex-direction: column;
-      margin-bottom: 55px;
+      align-items: center;
+      gap: 22px;
 
-      > .header-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 22px;
+      > .title {
+        @include display-medium-b;
+      }
 
-        > .title {
-          @include display-medium-b;
-        }
-
-        > .description {
-          @include title-small;
-        }
+      > .description {
+        @include title-small;
       }
     }
+  }
 
-    &-form {
+  &__section-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 16px;
+
+    > .form-container {
       display: flex;
       flex-direction: column;
-      gap: 32px;
-      margin-bottom: 36px;
+      align-items: start;
+      gap: 16px;
+    }
+  }
 
-      > .form-container {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 16px;
-      }
+  &__section-sns {
+    display: flex;
+    flex-direction: column;
+    .text-wrapper {
+      display: block;
+      text-align: center;
+      margin-bottom: 16px;
+      @include body-large-semibold;
+      height: 24px;
     }
 
-    &-sns {
-      .sns-container {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 42px;
-
-        span {
-          @include title-small;
-          color: $grayscale-90;
-        }
-
-        > .sns-wrapper {
-          display: flex;
-          gap: 16px;
-
-          > img:hover {
-            cursor: pointer;
-          }
-        }
-      }
-    }
-
-    &-link {
+    .sns-container {
       display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 42px;
       justify-content: center;
 
-      > .link-container {
+      span {
+        @include title-small;
+        color: $grayscale-90;
+      }
+
+      > .sns-wrapper {
         display: flex;
-        gap: 68px;
+        gap: 16px;
 
-        > a {
-          text-decoration: none;
-          @include title-small;
-          color: $grayscale-50;
-          position: relative;
-
-          &:not(:last-child)::after {
-            content: '|';
-            position: absolute;
-            color: #8e8e8e;
-            margin-left: 34px;
-            cursor: default;
-          }
+        > img:hover {
+          cursor: pointer;
         }
+      }
+    }
+  }
+
+  &__section-link {
+    display: flex;
+    justify-content: center;
+
+    > .link-container {
+      display: flex;
+      gap: 68px;
+
+      > a,
+      span {
+        text-decoration: none;
+        @include title-small;
+        color: $grayscale-50;
+        position: relative;
+
+        &:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          color: #8e8e8e;
+          margin-left: 34px;
+          cursor: default;
+          border: 1px solid $grayscale-50;
+          height: 22px;
+        }
+      }
+
+      span:hover {
+        cursor: pointer;
       }
     }
   }

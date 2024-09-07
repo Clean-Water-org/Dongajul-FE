@@ -1,0 +1,117 @@
+@import '@/styles/style.scss';
+
+.input-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-height: 86px;
+
+  &.search-default {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 20px;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 16px;
+      width: 20px;
+      background-image: url('@/assets/icons/icon_search_default.svg');
+      z-index: 1;
+    }
+
+    &::after {
+      left: 46px;
+      width: 1px;
+      background-color: $grayscale-50;
+    }
+  }
+
+  &.search-focus {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 20px;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 16px;
+      width: 20px;
+      background-image: url('@/assets/icons/icon_search_focus.svg');
+      z-index: 1;
+    }
+
+    &::after {
+      left: 46px;
+      width: 1px;
+      background-color: $grayscale-90;
+    }
+  }
+
+  > .input {
+    @include title-small;
+    color: $grayscale-50;
+    border: 1px solid $grayscale-30;
+    border-radius: 6px;
+    padding: 24px;
+    box-sizing: border-box;
+    height: 54px;
+    transition: all 0.3s ease;
+
+    &:focus:not(.error),
+    &.validated {
+      background-color: $white;
+      color: $grayscale-90;
+      border: 1px solid $main-color;
+      outline: none;
+      box-shadow: 0 0 0 1px $main-color;
+    }
+
+    &.error {
+      border: 1px solid $danger-50;
+      background-color: $danger-5;
+      color: $grayscale-90;
+
+      &:focus {
+        border: 1px solid $danger-50;
+        outline: none;
+        box-shadow: 0 0 0 1px $danger-50;
+      }
+    }
+
+    &.small {
+      width: 200px;
+    }
+
+    &.medium {
+      width: 278px;
+    }
+
+    &.large {
+      width: 410px;
+    }
+
+    &.search {
+      width: 680px;
+      padding: 24px 16px 24px 56px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #fff !important;
+}

@@ -1,0 +1,17 @@
+@import '@/styles/style.scss';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  > h1 {
+    color: $grayscale-90;
+    @include headline-small-b;
+  }
+
+  > p {
+    color: $grayscale-90;
+    @include title-large;
+  }
+}

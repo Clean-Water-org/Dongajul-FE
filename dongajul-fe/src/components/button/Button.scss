@@ -1,0 +1,53 @@
+@import '@/styles/style.scss';
+
+.button {
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 8px;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &.primary {
+    background-color: $main-color;
+    color: white;
+    border: none;
+  }
+
+  &.secondary {
+    background-color: white;
+    color: $main-color;
+    border: 1px solid $main-color;
+  }
+
+  &:disabled {
+    background-color: $grayscale-30;
+    color: $white;
+    border: none;
+  }
+
+  &.large {
+    width: 410px;
+    height: 60px;
+    @include title-small-b;
+  }
+
+  &.medium {
+    width: 200px;
+    height: 54px;
+    @include title-small-b;
+  }
+
+  &.small {
+    width: 122px;
+    height: 54px;
+    @include body-large-semibold;
+  }
+}

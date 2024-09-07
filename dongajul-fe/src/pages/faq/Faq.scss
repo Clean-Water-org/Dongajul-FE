@@ -1,0 +1,43 @@
+@import '@/styles/style.scss';
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    margin-bottom: 80px;
+  }
+
+  &-footer {
+    @include body-large;
+    color: $grayscale-70;
+
+    > .icon-question {
+      margin-right: 8px;
+      position: relative;
+      padding-left: 24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('@/assets/icons/icon_question.svg');
+        left: 0;
+        top: 0;
+      }
+    }
+
+    > .qna-link {
+      @include body-large-semibold;
+      text-decoration: underline;
+      color: $grayscale-70;
+      margin-right: 4px;
+    }
+  }
+}

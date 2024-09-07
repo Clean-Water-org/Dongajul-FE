@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import icon_user from '@/assets/icons/icon_user.svg';
-import icon_notify from '@/assets/icons/icon_notify.svg';
+import logo from '@/assets/img/logo_color.png';
 import './Navigation.scss';
+import { useNavigate } from 'react-router-dom';
 
 const pageMenus = [
   { id: 'Home', path: '/', text: '홈' },
@@ -11,21 +11,27 @@ const pageMenus = [
 
 const authMenus = [
   { id: 'Login', path: '/login', text: '로그인' },
-  { id: 'Signup', path: '/signup', text: '회원가입', end: true },
+  { id: 'Signup', path: '/login?signup=true', text: '회원가입' },
 ];
 
 const Navigation = () => {
+  const navigate = useNavigate();
+
+  const onClickLogo = () => {
+    navigate('/');
+  };
+
   return (
-    <nav className="nav">
-      <section className="section section-logo">
-        <p>동아줄</p>
+    <nav className='nav'>
+      <section className='section section-logo' onClick={onClickLogo}>
+        <img src={logo} alt='logo' />
       </section>
 
-      <section className="section section-menu">
-        <ul className="menu-container">
+      <section className='section section-menu'>
+        <ul className='menu-container'>
           {pageMenus.map((menu) => (
-            <li key={menu.id} className="menu-wrapper">
-              <NavLink to={menu.path} className="menu" activeclassname="active">
+            <li key={menu.id} className='menu-wrapper'>
+              <NavLink to={menu.path} className='menu' activeclassname='active'>
                 {menu.text}
               </NavLink>
             </li>
@@ -33,22 +39,18 @@ const Navigation = () => {
         </ul>
       </section>
 
-      <section className="section section-user">
-        <div className="user-left">
-          <img src={icon_notify} alt="" className="icon notify"></img>
-          <img src={icon_user} alt="" className="icon user"></img>
-        </div>
-        <div className="user-right">
-          <ul className="user-container">
-            {authMenus.map((auth) => (
-              <li key={auth.id} className="user-wrapper">
-                <NavLink to={auth.path} activeclassname="active">
-                  {auth.text}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <section className='section section-user'>
+        <div className='notify'></div>
+        <NavLink to='/' activeclassname='active'>
+          마이페이지
+        </NavLink>
+        <ul className='user-container'>
+          {authMenus.map((auth) => (
+            <li key={auth.id} className='user-wrapper'>
+              <NavLink to={auth.path}>{auth.text}</NavLink>
+            </li>
+          ))}
+        </ul>
       </section>
     </nav>
   );

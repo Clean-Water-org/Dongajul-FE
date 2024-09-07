@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './Modal.scss';
 
-const Modal = ({ content, onClose }) => {
+const Modal = ({ content: Content, onClose }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -18,7 +18,9 @@ const Modal = ({ content, onClose }) => {
   return (
     <div className='modal'>
       <div className='modal-background' onClick={onClickOutside} />
-      <div className='modal-container'>{content}</div>
+      <div className='modal-container'>
+        <Content onClose={onClose}></Content>
+      </div>
     </div>
   );
 };

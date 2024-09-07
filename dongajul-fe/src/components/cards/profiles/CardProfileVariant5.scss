@@ -1,0 +1,70 @@
+@import '@/styles/style.scss';
+
+.card-profile-variant-5 {
+  padding: 24px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 347px;
+  height: 278px;
+  border: 1.4px solid #e4e4e4;
+  box-shadow: 16px 15px 0px #f7f7f7;
+  border-radius: 16px;
+
+  > .top {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    align-items: center;
+
+    > .top-left {
+      padding: 3px 2px 3px 2px;
+      box-sizing: border-box;
+      width: 85px;
+      height: 85px;
+      align-items: center;
+
+      > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: fill;
+        outline: 1px solid rgba(152, 152, 152, 0.25);
+      }
+    }
+
+    > .top-right {
+      padding: 9px 0; // 상하
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      > .title-primary {
+        @include title-small-b;
+        color: $main-color;
+      }
+
+      > .title-secondary {
+        @include body-large-semibold;
+        color: $grayscale-90;
+      }
+    }
+  }
+
+  > .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    > .bottom-content {
+      @include body-medium;
+      color: $grayscale-90;
+
+      > .content {
+        line-height: 20px;
+      }
+    }
+  }
+}

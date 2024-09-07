@@ -2,8 +2,9 @@
   position: fixed;
   bottom: 64px;
   right: 310px;
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
+  animation: float 2s ease-in-out infinite;
 
   &:hover {
     cursor: pointer;
@@ -11,6 +12,20 @@
 
   img {
     z-index: 10;
+    width: 64px;
+    height: 64px;
     filter: drop-shadow(8px 6px 6px #b9b9b9);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

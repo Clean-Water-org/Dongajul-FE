@@ -1,5 +1,6 @@
 import './Footer.scss';
 import { NavLink } from 'react-router-dom';
+import logo from '@/assets/img/logo_grayscale.png';
 
 const links = [
   { id: 'information', path: '/information', text: 'INFORMATION' },
@@ -18,7 +19,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer-logo'>
-        <p>동아줄</p>
+        <img src={logo} alt='logo' />
       </div>
 
       <div className='footer-links'>
@@ -34,7 +35,7 @@ const Footer = () => {
       </div>
 
       <div className='footer-copyright'>
-        <p>Copyright © 2024 Ttokpaming ltd.</p>
+        <p>Copyright © 2024 Dongajul Clean-water.</p>
         <p>All Rights Reserved</p>
       </div>
     </footer>

@@ -45,21 +45,19 @@
           @include title-small-b;
           color: $grayscale-90;
           user-select: none;
+          align-self: flex-start;
+          padding-top: 18px;
         }
 
         > .input-content {
           display: flex;
-          flex-direction: row;
-          gap: 10px;
+          flex-direction: column;
 
-          &.with-helpertext {
-            flex-direction: column;
-
-            > span {
-              display: inline-block;
-              @include body-medium;
-              color: $grayscale-70;
-            }
+          > .row-wrapper {
+            width: 410px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
           }
         }
       }

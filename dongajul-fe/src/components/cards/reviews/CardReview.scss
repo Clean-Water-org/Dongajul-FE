@@ -1,0 +1,126 @@
+@import '@/styles/style.scss';
+
+.card-review {
+  width: 420px;
+  max-height: 376px;
+  // background-color: #e5e4e4;
+
+  > .top {
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 32px 24px;
+    box-sizing: border-box;
+
+    border-width: 1.4px 1.4px 0px 1.4px;
+    border-style: solid;
+    border-color: #e4e4e4;
+    border-radius: 16px 16px 0px 0px;
+
+    > .top-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      > .name {
+        @include title-medium-b;
+      }
+    }
+
+    > .top-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      > .title {
+        @include body-large-semibold;
+        color: $grayscale-90;
+      }
+
+      > .content {
+        max-height: 72px;
+        @include body-large;
+        color: $grayscale-90;
+        line-height: 24px;
+        align-self: stretch;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* 라인 수에 따라 말줄임표 처리 (72px / 24px = 3) */
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        white-space: normal;
+      }
+    }
+
+    > .top-date {
+      @include body-small;
+      color: $grayscale-70;
+    }
+  }
+
+  > .bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    padding: 20px 24px;
+    box-sizing: border-box;
+    background-color: $primary-5;
+    border-radius: 0px 0px 16px 16px;
+
+    > .profile-image {
+      > img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        outline: 1px solid rgba(152, 152, 152, 0.25);
+        background-color: $white;
+      }
+    }
+
+    > .comment {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      > .name {
+        @include body-medium-semibold;
+        color: $grayscale-90;
+      }
+
+      > .content {
+        @include body-medium-semibold;
+        color: $main-color;
+        background: $white;
+        border: 1px solid $main-color;
+        border-radius: 4px 24px 24px 24px;
+        padding: 12px 18px;
+        width: 296px;
+        max-height: 64px;
+        height: 64px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; /* 줄바꿈 없이 한 줄로 제한 */
+        position: relative; /* 상대 위치 설정 */
+      }
+
+      > .content::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; /* 부모의 높이와 중간에 맞추기 위해 사용 */
+      }
+
+      > .content span {
+        display: inline-block;
+        vertical-align: middle; /* 세로 중앙 정렬 */
+        text-overflow: ellipsis;
+        white-space: nowrap; /* 줄바꿈 없이 한 줄로 제한 */
+        overflow: hidden; /* 텍스트 넘칠 때 숨김 */
+        width: 100%; /* span 내부에서 텍스트가 말줄임표로 처리되도록 설정 */
+      }
+    }
+  }
+}
