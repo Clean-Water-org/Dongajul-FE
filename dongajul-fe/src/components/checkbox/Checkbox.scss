@@ -1,24 +1,42 @@
 @import '@/styles/style.scss';
 
-.Checkbox {
-  .checkbox {
-    &-label {
-      display: flex;
-      align-items: center;
-      @include title-small;
-      color: $grayscale-90;
+.checkbox {
+  > .checkbox-label {
+    display: flex;
+    align-items: center;
 
-      .checkbox-input {
-        margin-right: 8px;
+    &.default {
+      > .checkbox-input {
+        margin-right: 12px;
         width: 24px;
         height: 24px;
         border: 1px solid $grayscale-30;
         box-sizing: border-box;
       }
 
-      &:hover {
-        cursor: pointer;
+      > span {
+        @include title-small;
+        color: $grayscale-90;
       }
+    }
+
+    &.small {
+      > .checkbox-input {
+        margin-right: 12px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $grayscale-30;
+        box-sizing: border-box;
+      }
+
+      > span {
+        @include body-large;
+        color: $grayscale-90;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

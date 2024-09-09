@@ -1,0 +1,47 @@
+@import '@/styles/style.scss';
+
+.radio {
+  > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > .radio-input {
+      width: 24px;
+      height: 24px;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:checked {
+        border-color: rgb(0, 0, 0); // 선택되었을 때 border 색상
+      }
+
+      &.no-image {
+        margin-right: 12px;
+      }
+
+      &.use-image {
+        margin-right: 8px;
+      }
+    }
+
+    .radio-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 6px;
+
+      > img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    > span {
+      @include title-small;
+      color: $grayscale-90;
+    }
+  }
+}

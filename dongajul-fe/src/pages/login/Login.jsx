@@ -82,6 +82,7 @@ const Login = () => {
             <Checkbox
               value={checked}
               label='이메일 저장하기'
+              checked={checked}
               onChange={onChangeCheckbox}
             />
           </div>

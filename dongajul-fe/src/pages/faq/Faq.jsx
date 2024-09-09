@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LABEL_SIZE } from '@/constants/label';
+import { LABEL_SIZE } from '@/constants/button';
 import Header from '@/components/Header/Header';
 import LabelGroup from '@/components/labels/LabelGroup';
 import AccordionGroup from '@/components/accordions/AccordionGroup';

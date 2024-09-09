@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '@/components/layouts/Layout';
+import Components from '@/pages/home/Components';
 
 const Home = lazy(() => import('@/pages/home/Home'));
 const Login = lazy(() => import('@/pages/login/Login'));
@@ -9,6 +10,8 @@ const Faq = lazy(() => import('@/pages/faq/Faq'));
 const NotFound = lazy(() => import('@/pages/common/NotFound'));
 
 const routes = [
+  // TODO components 제거
+  { key: 'components', path: '/components', element: <Components /> },
   { key: 'home', path: '/', element: <Home /> },
   { key: 'login', path: '/login', element: <Login /> },
   { key: 'signup', path: '/signup', element: <Signup /> },

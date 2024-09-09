@@ -1,38 +1,35 @@
-import PropTypes from 'prop-types';
 import { useId } from 'react';
+import { CHECKBOX_SIZE } from '@/constants/checkbox';
+import classNames from 'classnames';
 import './Checkbox.scss';
 
 const Checkbox = ({
   label,
   checked = false,
+  disabled = false,
+  size = CHECKBOX_SIZE.DEFAULT,
   onChange = () => {},
-  disabled,
 }) => {
   const id = useId();
   const inputId = `checkbox-${id}`;
 
+  const className = classNames('checkbox-label', size);
+
   return (
-    <div className='Checkbox'>
-      <label htmlFor={inputId} className='checkbox-label'>
+    <div className='checkbox'>
+      <label htmlFor={inputId} className={className}>
         <input
           className='checkbox-input'
           id={inputId}
           type='checkbox'
-          defaultChecked={checked ? true : false}
+          checked={checked}
           onChange={onChange}
           disabled={disabled}
         />
-        {label}
+        {label && <span>{label}</span>}
       </label>
     </div>
   );
 };
 
 export default Checkbox;
-
-Checkbox.propTypes = {
-  label: PropTypes.string.isRequired,
-  checked: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
-};
