@@ -1,0 +1,123 @@
+@import '@/styles/style.scss';
+
+.label-button {
+  height: 40px;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 9px 16px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  gap: 8px;
+
+  &.date {
+    padding: 10px 18px;
+    height: 56px;
+    width: 324px;
+    gap: 10px;
+
+    > .label-button-icon {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+
+      &.calendar::after {
+        content: '';
+        display: inline-block;
+        background-image: url('@/assets/icons/icon_calendar.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    > .cancel-button {
+      height: 24px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        background-image: url('@/assets/icons/icon_circle_cancel.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &.primary {
+    background-color: $primary-5;
+
+    &.date {
+      border: 1px solid $primary-30;
+    }
+  }
+
+  &.secondary {
+    background-color: $grayscale-5;
+
+    &.date {
+      background-color: $white;
+      border: 1px solid $grayscale-30;
+    }
+  }
+
+  &.danger {
+    background-color: $danger-50;
+  }
+
+  > .label-button-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    &.clip::after {
+      content: '';
+      display: inline-block;
+      background-image: url('@/assets/icons/icon_clip.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.cancel::after {
+      content: '';
+      display: inline-block;
+      background-image: url('@/assets/icons/icon_cancel.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+    }
+  }
+
+  & > span {
+    @include label-large-semibold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &.primary > span,
+  &.secondary > span {
+    color: $main-color;
+  }
+
+  &.danger > span {
+    color: $white;
+  }
+
+  &.date > span {
+    color: $grayscale-90;
+  }
+}
