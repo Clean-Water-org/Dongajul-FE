@@ -17,20 +17,14 @@ export const BUTTON_ICON = Object.freeze({
   CHECK_BLUE: 'check-blue',
 });
 
-export const LABEL_COLOR = Object.freeze({
-  DEFAULT: 'default',
-  DANGER: 'danger',
-  GRAYSCALE: 'grayscale',
-});
-
-export const LABEL_TYPE = Object.freeze({
+export const LABEL_BUTTON_TYPE = Object.freeze({
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
-  GHOST: 'ghost',
+  DANGER: 'danger',
 });
 
-export const LABEL_SIZE = Object.freeze({
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
+export const LABEL_BUTTON_ICON = Object.freeze({
+  CLIP: 'clip',
+  CANCEL: 'cancel',
+  CALENDAR: 'calendar',
 });

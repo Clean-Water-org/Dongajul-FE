@@ -1,88 +1,157 @@
 @import '@/styles/style.scss';
 
 .label {
-  &.medium {
-    width: fit-content;
-    height: 32px;
-    border-radius: 100px;
-    @include body-medium-semibold;
-
-    > span {
-      display: inline-block;
-      margin: 6px 16px;
-    }
-  }
-
   &.large {
     width: fit-content;
     height: 42px;
     border-radius: 200px;
     @include body-large-semibold;
+    padding: 9px 36px;
+    box-sizing: border-box;
 
-    > span {
-      display: inline-block;
-      margin: 9px 56px;
+    &.default {
+      box-sizing: border-box;
+
+      &.primary {
+        border: 1px solid $main-color;
+        background-color: $main-color;
+        color: $white;
+      }
+
+      &.secondary {
+        border: 1px solid $primary-5;
+        background-color: $primary-5;
+        color: $main-color;
+      }
+
+      &.ghost {
+        background-color: $white;
+        color: $main-color;
+        border: 1px solid $main-color;
+      }
+    }
+
+    &.danger {
+      box-sizing: border-box;
+
+      &.primary {
+        border: 1px solid $danger-50;
+        background-color: $danger-50;
+        color: $white;
+      }
+
+      &.secondary {
+        border: 1px solid $danger-5;
+        background-color: $danger-5;
+        color: $danger-50;
+      }
+
+      &.ghost {
+        border: 1px solid $danger-50;
+        background-color: $white;
+        color: $danger-50;
+      }
+    }
+
+    &.grayscale {
+      box-sizing: border-box;
+
+      &.primary {
+        border: 1px solid $grayscale-70;
+        background-color: $grayscale-70;
+        color: $white;
+      }
+
+      &.secondary {
+        border: 1px solid $grayscale-10;
+        background-color: $grayscale-10;
+        color: $grayscale-70;
+      }
+
+      &.ghost {
+        border: 1px solid $grayscale-70;
+        background-color: $white;
+        color: $grayscale-50;
+      }
     }
   }
 
-  &.default {
-    &.primary {
-      background-color: $main-color;
-      color: $white;
-    }
+  &.medium {
+    width: fit-content;
+    height: 32px;
+    border-radius: 100px;
+    @include body-medium-semibold;
+    padding: 6px 16px;
+    box-sizing: border-box;
 
-    &.secondary {
-      background-color: $primary-5;
-      color: $main-color;
-    }
-
-    &.ghost {
-      background-color: $white;
-      color: $main-color;
-      border: 1px solid $main-color;
+    &.default {
       box-sizing: border-box;
-    }
-  }
 
-  &.danger {
-    &.primary {
-      background-color: $danger-50;
-      color: $white;
+      &.primary {
+        border: 1px solid $primary-5;
+        background-color: $primary-5;
+        color: $main-color;
+      }
+
+      &.secondary {
+        border: 1px solid $white;
+        background-color: $white;
+        color: $main-color;
+      }
+
+      &.ghost {
+        background-color: $white;
+        color: $main-color;
+        border: 1px solid $main-color;
+      }
     }
 
-    &.secondary {
-      background-color: $danger-5;
-      color: $danger-50;
-    }
-
-    &.ghost {
-      background-color: $white;
-      color: $danger-50;
-      border: 1px solid $danger-50;
+    &.danger {
       box-sizing: border-box;
-    }
-  }
 
-  &.grayscale {
-    &.primary {
-      background-color: $grayscale-70;
-      color: $white;
+      &.primary {
+        border: 1px solid $danger-5;
+        background-color: $danger-5;
+        color: $danger-50;
+      }
+
+      &.secondary {
+        border: 1px solid $white;
+        background-color: $white;
+        color: $danger-50;
+      }
+
+      &.ghost {
+        border: 1px solid $danger-50;
+        background-color: $white;
+        color: $danger-50;
+      }
     }
 
-    &.secondary {
-      background-color: $grayscale-10;
-      color: $grayscale-70;
-    }
-
-    &.ghost {
-      background-color: $white;
-      color: $grayscale-50;
-      border: 1px solid $grayscale-70;
+    &.grayscale {
       box-sizing: border-box;
+
+      &.primary {
+        border: 1px solid $grayscale-10;
+        background-color: $grayscale-10;
+        color: $grayscale-70;
+      }
+
+      &.secondary {
+        border: 1px solid $white;
+        background-color: $white;
+        color: $grayscale-70;
+      }
+
+      &.ghost {
+        border: 1px solid $grayscale-70;
+        background-color: $white;
+        color: $grayscale-70;
+      }
     }
   }
 
   &:hover {
-    cursor: pointer;
+    cursor: default;
   }
 }

@@ -1,4 +1,4 @@
-import { LABEL_COLOR, LABEL_SIZE, LABEL_TYPE } from '@/constants/button';
+import { LABEL_COLOR, LABEL_SIZE, LABEL_TYPE } from '@/constants/label';
 import Label from '@/components/labels/Label';
 import './LabelGroup.scss';
 
