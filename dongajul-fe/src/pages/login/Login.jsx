@@ -1,5 +1,5 @@
 import { INPUT_SIZE } from '@/constants/input';
-import Button from '@/components/button/Button';
+import Button from '@/components/buttons/Button';
 import Checkbox from '@/components/checkbox/Checkbox';
 import Input from '@/components/input/Input';
 import { BUTTON_SIZE } from '@/constants/button';

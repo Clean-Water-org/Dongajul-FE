@@ -1,6 +1,6 @@
 import naver from '@/assets/img/login_button_naver.png';
 import kakao from '@/assets/img/login_button_kakao.png';
-import Button from '@/components/button/Button';
+import Button from '@/components/buttons/Button';
 import { BUTTON_SIZE } from '@/constants/button';
 import './SignupModal.scss';
 import { NavLink, useNavigate } from 'react-router-dom';
