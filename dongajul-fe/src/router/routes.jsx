@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '@/components/layouts/Layout';
-import Components from '@/pages/home/Components';
+import Components from '@/pages/temp/Components';
 
 const Home = lazy(() => import('@/pages/home/Home'));
 const Login = lazy(() => import('@/pages/login/Login'));
