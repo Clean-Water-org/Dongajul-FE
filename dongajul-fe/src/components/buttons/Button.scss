@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
+  box-sizing: border-box;
 
   &:hover:not(:disabled) {
     cursor: pointer;
@@ -17,14 +18,26 @@
 
   &.primary {
     background-color: $main-color;
-    color: white;
+    color: $white;
     border: none;
   }
 
   &.secondary {
-    background-color: white;
+    background-color: $primary-5;
     color: $main-color;
-    border: 1px solid $main-color;
+    border: none;
+  }
+
+  &.ghost {
+    background-color: $white;
+    color: $main-color;
+    border: 1.4px solid $main-color;
+  }
+
+  &.danger {
+    background-color: $danger-50;
+    color: $white;
+    border: none;
   }
 
   &:disabled {
@@ -49,5 +62,54 @@
     width: 122px;
     height: 54px;
     @include body-large-semibold;
+  }
+
+  &.x-small {
+    width: 122px;
+    height: 44px;
+    @include body-large-semibold;
+
+    &.secondary {
+      background-color: $white;
+      color: $grayscale-70;
+      border: 1.4px solid $grayscale-70;
+    }
+  }
+
+  > .button-icon {
+    width: 24px;
+    height: 24px;
+
+    &.check-white::after {
+      content: '';
+      display: inline-block;
+      background-color: currentColor;
+      mask: url('@/assets/icons/icon_check.svg') no-repeat center;
+      mask-size: contain;
+      width: 24px;
+      height: 24px;
+      color: $white;
+    }
+
+    &.check-blue::after {
+      content: '';
+      display: inline-block;
+      background-color: currentColor;
+      mask: url('@/assets/icons/icon_check.svg') no-repeat center;
+      mask-size: contain;
+      width: 24px;
+      height: 24px;
+      color: $main-color;
+    }
+
+    &.plus::after {
+      content: '';
+      display: inline-block;
+      background-color: currentColor;
+      mask: url('@/assets/icons/icon_plus.svg') no-repeat center;
+      mask-size: contain;
+      width: 24px;
+      height: 24px;
+    }
   }
 }
