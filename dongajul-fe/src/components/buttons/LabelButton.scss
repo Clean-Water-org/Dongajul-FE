@@ -25,9 +25,9 @@
       &.calendar::after {
         content: '';
         display: inline-block;
-        background-image: url('@/assets/icons/icon_calendar.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-color: currentColor;
+        mask: url('@/assets/icons/icon_calendar.svg') no-repeat center;
+        mask-size: contain;
         width: 36px;
         height: 36px;
       }
@@ -43,9 +43,9 @@
       &::after {
         content: '';
         display: inline-block;
-        background-image: url('@/assets/icons/icon_circle_cancel.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
+        background-color: currentColor;
+        mask: url('@/assets/icons/icon_circle_cancel.svg') no-repeat center;
+        mask-size: contain;
         width: 24px;
         height: 24px;
       }
@@ -81,9 +81,9 @@
     &.clip::after {
       content: '';
       display: inline-block;
-      background-image: url('@/assets/icons/icon_clip.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
+      background-color: currentColor;
+      mask: url('@/assets/icons/icon_clip.svg') no-repeat center;
+      mask-size: contain;
       width: 20px;
       height: 20px;
     }
@@ -91,12 +91,12 @@
     &.cancel::after {
       content: '';
       display: inline-block;
-      background-image: url('@/assets/icons/icon_cancel.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
+      background-color: currentColor;
+      mask: url('@/assets/icons/icon_cancel.svg') no-repeat center;
+      mask-size: contain;
       width: 20px;
       height: 20px;
-      filter: invert(1);
+      color: $white;
     }
   }
 
